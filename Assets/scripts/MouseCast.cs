@@ -2,21 +2,19 @@ using UnityEngine;
 
 public class MouseCast : MonoBehaviour
 {
-    public Tinta tinta;
+    public Tinta controladorTinta;
 
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if(Physics.Raycast(ray, out hit))
+            if(Physics.Raycast(ray, out RaycastHit hit))
             {
                 Renderer renderer = hit.collider.GetComponent<Renderer>();
-                if(renderer != null && tinta != null)
+                if(renderer != null && controladorTinta != null)
                 {
-                    tinta.PintarParte(renderer);
+                    controladorTinta.Pintar(renderer);
                 }
             }
         }

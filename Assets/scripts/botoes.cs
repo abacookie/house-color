@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Botoes : MonoBehaviour
 {
     public Tinta controladorTinta;
-    public int indiceCor; // 0-4 (cores disponíveis)
+    public int indiceCor;
 
     void Start()
     {
